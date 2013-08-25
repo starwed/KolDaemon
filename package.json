@@ -2,10 +2,10 @@
     "name": "koldaemon", 
     "license": "MPL 1.1/GPL 2.0/LGPL 2.1", 
     "author": "starwed", 
-    "version": "1.0a", 
+    "version": "1.0b", 
     "fullName": "KolDaemon", 
     "id": "jid1-2WpJAH8SHT0cWg", 
-    "homepage": "http://sweb.uky.edu/~tjmart1/kol/koldaemon.html",
+    "homepage": "http://ludonomicon.com/koldaemon.html",
     "description": "A tabbed chat extension for the Kingdom of Loathing.",
     "preferences": [{
         "name": "timestampsOn",
