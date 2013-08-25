@@ -1,0 +1,77 @@
+{
+    "name": "koldaemon", 
+    "license": "MPL 1.1/GPL 2.0/LGPL 2.1", 
+    "author": "starwed", 
+    "version": "1.0a", 
+    "fullName": "KolDaemon", 
+    "id": "jid1-2WpJAH8SHT0cWg", 
+    "homepage": "http://sweb.uky.edu/~tjmart1/kol/koldaemon.html",
+    "description": "A tabbed chat extension for the Kingdom of Loathing.",
+    "preferences": [{
+        "name": "timestampsOn",
+        "title": "Show timestamps",
+        "type": "bool",
+        "value": false
+    },
+    {
+        "name": "loudTabs",
+        "title": "Make tabs with new messages more obvious",
+        "type": "bool",
+        "value": false
+    },
+
+    {
+        "name": "notifyOn",
+        "title": "Notifications for system messages",
+        "type": "bool",
+        "value": false
+    },
+
+    {
+        "name": "pmNotifyOn",
+        "title": "Notifications for private messages",
+        "type": "bool",
+        "value": false
+    },
+
+
+    {
+        "name": "persistSystemMessages",
+        "title": "Persist chat command output for ? seconds",
+        "type": "string",
+        "value": "-1"
+    },
+    {
+        "name": "proxyTrigger",
+        "title": "Run for mafia/kolproxy (needs restart)",
+        "type": "bool",
+        "value": true
+    },
+    {
+        "name":"watchWords",
+        "title":"Regex for important messages",
+        "type": "string",
+        "value": ""
+    },
+    {
+        "name":"splitPvP",
+        "title":"Send PvP announcements into their own channel",
+        "type": "bool",
+        "value": true
+    },
+    {
+        "name": "pmEvents",
+        "title":"Fake event messages for PMs",
+        "type": "bool",
+        "value": false
+    },
+    {
+        "name": "chatMarkers",
+        "title":"Mark chat when switching tabs",
+        "type": "bool",
+        "value": true
+    }
+
+
+    ]
+}

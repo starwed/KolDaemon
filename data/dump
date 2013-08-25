@@ -1,0 +1,43 @@
+optionsDialog: () =>
+		@showSystemLog()
+		return
+		console.log("OPTIONS!")
+		console.log("tson #{@timestampsOn}")
+		try
+			properWidth = $("#tabs").width()
+
+
+			createOption = (optionText, optionName, checkVar, toggleFunction) =>
+				option = """
+						<tr> 
+							<td><span class='option-text'>#{optionText}</span></td>
+							<td><input class="option-checkbox"  type="checkbox" name="#{optionName}" value="#{optionName}" /></td>
+						</tr>
+					"""
+				$option = $(option)
+				$input = $('input.option-checkbox', $option)
+				if checkVar is true
+					$input.attr('checked', 'true')
+				$input.change(toggleFunction)
+
+				return $option
+			
+			$dialog = $("<table></table>")
+			
+			$stampOption = createOption('Show timestamps', 'timestamp', @timestampsOn, @toggleTimespamps)
+			$dialog.append($stampOption)
+
+			#Make actual functionality
+			$dialog.append("<tr><td>System messages</td></tr>")
+			#$dialog.append( createOption("in Log tab", 'systemlog', @logTab, @toggleLogTab) )
+			$dialog.append( createOption("persist in chat", 'systemmsg', @persistSystemMessages, @togglePersist) )
+			#$dialog.append( createOption("...as notfications", 'systemmsg', true, null) )
+
+				
+			$dialog.dialog({
+					title: 'Options'
+					width: properWidth
+				})
+			
+		catch e
+			console.log(e)

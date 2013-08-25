@@ -1,0 +1,369 @@
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="jquery-ui-1.8.16.custom.css" />
+		<style>
+
+		.infoPadder{
+				z-index: -1;
+			
+		}
+
+		.option-text{
+			font-weight: 400;
+			margin-left: 1em;
+			margin-right: 1em;
+		}
+
+		.timestamp{
+			display: none;
+			font-size: 9px;
+			vertical-align: middle;
+		}
+
+
+		.chatInfo{
+			/*position: absolute;*/
+			padding-left: 5px;
+			font-size: smaller;
+			width: 100%;
+			z-index: 5;
+			background-color: white;
+		}
+
+		.chatInfo a{
+			font-size: 12px;
+			cursor: pointer;
+
+		}
+
+
+		.chatPadder{
+			height: 45px;
+		}
+
+		hr {
+			display: inline-block;
+			width: 40%;
+			height: 1px;
+			border:none;;
+		}
+
+		html, body { 
+			height: 100%; 
+			overflow: hidden;
+			width: 100%;
+			padding-left: 2px;
+			padding-right: 2px;
+
+		 }
+		 
+		 html{
+		 	font-size: 65%;
+
+		 }
+
+		 .dialog{
+		 	width: 100%;
+		 	
+		 }
+
+		 .dialog .table{
+		 	
+		 }
+
+		 .ui-dialog-titlebar{
+		 	font-size: 65%;
+
+		 }
+
+		 div.system {
+		 	position: relative;
+		 	width: -moz-calc(93%-5px);
+		 	border: 1px solid #339933;
+		 	background-color: rgb(251, 249, 238);
+		 	
+		 	/* These shoul dadd to 15px*/
+		 	margin-bottom: 5px;
+		 	padding-top: 3px;
+		 	padding-bottom: 3px;
+		 	margin-top: 4px;
+
+		 	padding-left: 3%;
+		 	padding-right: 3%;
+		 	border-radius: 5px;
+		 	overflow: hidden;
+		 	
+
+		 	font-size: 12px;
+		 	line-height: 15px;
+
+		 	
+		 
+		 }
+
+
+
+
+		 div.system-red {
+		 	border: 1px solid black ! important;
+		 	background-color: rgb(254, 241, 236)! important;
+		 }
+
+		 .system  font  a, .system  b{
+		 	/*font-family: Baskerville;*/
+		 }
+
+
+		.system .ui-icon-close{
+			 	position: absolute;
+			 	top: -1px;
+			 	right: 0px;
+				opacity: 0.5;
+				cursor: pointer;
+				 
+					 
+		}
+
+
+		.system .ui-icon-close:hover {
+			 	opacity: 1.0;
+ 	
+		}
+
+
+		 td, table{
+		 	word-wrap:break-word;
+		 	font-size: inherit;
+		 	
+		 }
+		 table{
+		 	/*font-size: 100%;*/	/*No idea why the table's font is so large by deafult!*/
+		 	
+		 }
+
+			 ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, body, html, p, blockquote, fieldset, input
+			{ margin:0px; padding:0px }
+
+			a.itemlink {
+				color: blue !important;
+				text-decoration: underline !important;
+			}
+
+			a {
+				text-decoration: none;
+			}
+
+			#tabs{
+				border: none ! important;
+				margin: 0 ! important;
+				padding: 0 ! important;
+				height: 100%; 				
+			}
+
+			.chatTab{
+				padding: 0 ! important;
+				margin: 0 ! important;
+				height: 100%;
+			}
+			#tab-head{
+				font-size: 10px	;
+				padding-top: 0 ! important;
+				font-family: Helvetica;
+				letter-spacing: 0.2pt;
+			}
+
+		
+
+			#tab-head li.important{
+				
+				/*font-weight: bold;*/
+			}
+
+
+			.ChatWindow{
+				z-index: 10;
+				position: relative;
+				top: 0px;
+
+
+				border: 0px solid black;
+				border-top: none;
+				padding-left: 10px ! important;
+				padding-right: 5px ! important;
+				padding-top: 0px ! important;
+				padding-bottom: 0px ! important;
+
+				
+				font-family: Helvetica, Arial, sans-serif;
+		 		font-size: 12px;
+		 		line-height: 15px;
+		 		word-spacing: -1px;
+		 		letter-spacing: 0.1pt;
+
+
+				width: -moz-calc(100% - 15px);
+				/*height: 100%;*/
+
+				overflow-y: scroll; 
+				overflow-x: hidden; 
+				overflow: auto;
+
+			}
+
+			.chatWindow {
+				font-weight: 200;
+			}
+
+			.chatWindow b{
+				font-weight: 600 ! important;
+			}
+			.important{
+				color: black;
+				text-shadow: 0px 0px 3px Yellow
+			}
+
+			.talking{
+				position: relative;
+				/*padding-left: 1em;*/
+				width: -moz-calc(100% - 1em -10px);
+				text-indent:  -10px;
+				padding-left: 2px;
+				/*font-size: 95%;*/
+				margin-top: 0px;
+			}
+
+			a.speaker{
+				cursor: pointer;
+			}
+
+			#tab-wrapper{
+				height: 80%;
+			}
+
+			#outer-wrapper{ 
+				width: 95%; 
+				left: 0em;
+				height: 100%;  
+				padding: 0em;
+				margin: 0;
+				
+			}
+ 
+			#bottom-wrapper{
+				position: relative;
+				height: 3.3em;
+				left: 0;
+				right: 0;
+				background-color: transparent;
+				width: 100%;
+
+			}
+
+			.TextInput{
+				position: absolute;
+				bottom: 10%;
+				left: 1%;
+				right: 5%;
+				top: 20%;
+				height: 70%;
+				width: 94%;
+				border: 1px solid black;
+				font-size: 110%;
+			}
+		
+
+			#gear{
+				position: absolute;
+				
+				left: 96%;
+				top: 22%;
+				opacity: 0.5;
+				cursor: pointer;
+			}
+
+			#gear:hover{
+				opacity: 1.0;
+			}
+			#tabs li .ui-icon-close {
+				 float: left; margin: 1px 0 0 -10px; cursor: pointer;
+				 display: none;
+					 
+			 }
+
+
+
+			 
+
+			 #tabs li.ui-tabs-selected .ui-icon-close:hover {
+			 	
+			 	opacity: 1.0;
+			 }
+
+			#tabs li.ui-tabs-selected .ui-icon-close {
+				display: inline;
+				opacity: 0.5;
+			}
+
+
+
+			 #tabs li.important .ui-icon-comment {
+				 display: inline ! important;
+					 
+			 }
+			 #tabs li .ui-icon-comment {
+				 float: left; margin: 1px 0 0 -10px; cursor: pointer;
+				 opacity: 0.6;
+				 display: none;
+					 
+			 }
+
+
+
+			
+			/*.chatLine b{
+				text-indent:  -1em;
+			}*/
+		</style>
+		
+		<!--script type="text/javascript" src="jquery-1.6.1.min.js"></script-->  
+		<!--script type="text/javascript" src="jquery-ui-1.8.16.custom.min.js"></script--> 
+		<!--script type="text/javascript" src="jquery.layout-latest.js"></script--> 
+	
+				
+	</head> 
+
+
+	<body>
+		<div id="outer-wrapper">
+	 		<div id="tab-wrapper">
+				<div id="tabs" class="tabs-bottom">
+					<ul id="tab-head">
+						<!--li><a href="#tabs-1">clan</a></li>
+						<li><a href="#tabs-2">trade</a></li>
+						<li><a href="#tabs-3">#starwed</a></li-->
+					</ul>
+
+					
+					
+				</div>
+
+			</div>
+			<div id="bottom-wrapper">
+				<div id="InputForm">
+					<center>
+						<input id="chatBox" class="TextInput"  maxlength="200" 
+							type="text" size="12" id="entry" autocomplete="off" />
+						<span id='gear' class="ui-icon ui-icon-gear">Options</span>
+					</center>
+				</div>
+				
+			</div>
+		</div>
+
+
+	</body>
+</html>
+
+
+
+
